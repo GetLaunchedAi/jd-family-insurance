@@ -1,15 +1,15 @@
 {
-  "name": "The Black Law Team",
-  "email": "info@theblacklawteam.com",
-  "phone": "555-LAW-TEAM",
-  "phoneFormatted": "(555) LAW-TEAM",
+  "name": "J&D Family Insurance",
+  "email": "jdfamilyinsurance@gmail.com",
+  "phone": "734-519-1039",
+  "phoneFormatted": "(734) 519-1039",
   "address": {
-    "lineOne": "Professional Law Office",
-    "lineTwo": "Legal Services Building",
-    "city": "Downtown",
-    "county": "Legal District",
-    "postcode": "12345",
-    "mapLink": "https://maps.app.goo.gl/4dJr5opfe3LLbqv48"
+    "lineOne": "Serving Families Nationwide",
+    "lineTwo": "Life Insurance Specialists",
+    "city": "Nationwide",
+    "county": "All States",
+    "postcode": "N/A",
+    "mapLink": "https://www.google.com/maps/search/?api=1&query=life+insurance+agent"
   },
-  "domain": "www.theblacklawteam.com"
+  "domain": "jdfamilyinsurance.com"
 }
