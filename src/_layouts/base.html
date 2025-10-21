@@ -106,6 +106,58 @@
         });
     </script>
 
+    <!--
+        Logo scroll switching for light mode on larger screens
+        Switches from logo_dark.png to logo_light.png when scrollY >= 10px
+    -->
+    <script defer>
+        function handleLogoScroll() {
+            const scroll = document.documentElement.scrollTop;
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            const isLargeScreen = window.innerWidth >= 1024; // Desktop breakpoint
+            
+            // Debug logging (remove in production)
+            console.log('Scroll:', scroll, 'Dark Mode:', isDarkMode, 'Large Screen:', isLargeScreen);
+            
+            // Only apply this logic in light mode on larger screens
+            if (!isDarkMode && isLargeScreen) {
+                if (scroll >= 100) {
+                    // Add scrolled class to show light logo
+                    document.body.classList.add('scrolled');
+                    console.log('Added scrolled class - should show light logo');
+                } else {
+                    // Remove scrolled class to show dark logo
+                    document.body.classList.remove('scrolled');
+                    console.log('Removed scrolled class - should show dark logo');
+                }
+            } else {
+                // Remove scrolled class when not in light mode or on smaller screens
+                document.body.classList.remove('scrolled');
+                console.log('Removed scrolled class - not applicable conditions');
+            }
+        }
+
+        // Initial call to set correct logo on page load
+        document.addEventListener('DOMContentLoaded', handleLogoScroll);
+        
+        // Listen for scroll events
+        document.addEventListener('scroll', handleLogoScroll);
+        
+        // Listen for window resize to handle screen size changes
+        window.addEventListener('resize', handleLogoScroll);
+        
+        // Listen for dark mode toggle to reset logo behavior
+        document.addEventListener('DOMContentLoaded', function() {
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('click', function() {
+                    // Small delay to allow dark mode class to be applied
+                    setTimeout(handleLogoScroll, 50);
+                });
+            }
+        });
+    </script>
+
 </body>
 
 </html>

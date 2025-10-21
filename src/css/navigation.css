@@ -652,3 +652,33 @@ body.dark-mode #navigation .logo img.dark {
   display: block !important;
   visibility: visible !important;
 }
+
+/* Scroll-based logo switching for light mode on larger screens */
+@media only screen and (min-width: 1024px) {
+  body:not(.dark-mode) #navigation .logo img {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  /* Override the default light mode behavior for scroll-based switching */
+  /* Start with dark logo in light mode on desktop */
+  body:not(.dark-mode) #navigation .logo img.light {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
+  body:not(.dark-mode) #navigation .logo img.dark {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  /* When scrolled, show light logo - this will be controlled by JavaScript */
+  body:not(.dark-mode).scrolled #navigation .logo img.light {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  body:not(.dark-mode).scrolled #navigation .logo img.dark {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
