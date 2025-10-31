@@ -220,23 +220,7 @@
 
   /* Social Icon Link */
   #navigation .social-icon-link {
-    position: absolute;
-    right: 4rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 3rem;
-    height: 3rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background-color 0.3s, transform 0.3s;
-    z-index: 100;
-    color: #000;
-    text-decoration: none;
+    display: none; /* Hidden on mobile screens */
   }
 
   #navigation .social-icon-link:hover {
@@ -252,7 +236,7 @@
   /* Dark Mode Toggle */
   #dark-mode-toggle {
     position: absolute;
-    right: 0rem;
+    right: 3rem; /* Positioned to the left of hamburger menu (3rem = width of hamburger) */
     top: 50%;
     transform: translateY(-50%);
     width: 3rem;
@@ -440,6 +424,15 @@
 
   body.scroll #navigation .social-icon-link svg path {
     fill: #000;
+  }
+
+  /* Ensure Facebook icon stays white in dark mode, even when scrolling */
+  body.dark-mode.scroll #navigation .social-icon-link {
+    color: #fff !important;
+  }
+
+  body.dark-mode.scroll #navigation .social-icon-link svg path {
+    fill: #fff !important;
   }
 
   body.dark-mode #navigation .background-color-div {
@@ -644,7 +637,11 @@
   }
 
   body.dark-mode #navigation .social-icon-link {
-    color: #fff;
+    color: #fff !important;
+  }
+
+  body.dark-mode #navigation .social-icon-link svg path {
+    fill: #fff !important;
   }
 
   body.dark-mode #navigation .social-icon-link:hover {
@@ -707,11 +704,24 @@
   }
 
   body.dark-mode #navigation .social-icon-link {
-    color: #fff;
+    color: #fff !important;
+  }
+
+  body.dark-mode #navigation .social-icon-link svg path {
+    fill: #fff !important;
   }
 
   body.dark-mode #navigation .social-icon-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Ensure Facebook icon stays white in dark mode when scrolling (desktop) */
+  body.dark-mode.scroll #navigation .social-icon-link {
+    color: #fff !important;
+  }
+
+  body.dark-mode.scroll #navigation .social-icon-link svg path {
+    fill: #fff !important;
   }
 }
 
