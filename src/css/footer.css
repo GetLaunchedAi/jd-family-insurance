@@ -162,6 +162,55 @@
     display: block;
     font-size: 1rem;
   }
+
+  /* Social Media Section */
+  #footer .social-media-section {
+    text-align: center;
+    margin-top: 3.125rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  #footer .social-media-section h3 {
+    color: #fff;
+    font-size: 1.125rem;
+    line-height: 1.16666667em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: .9;
+  }
+
+  #footer .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  #footer .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  #footer .social-link:hover {
+    background-color: var(--primary);
+    transform: translateY(-0.1875rem);
+  }
+
+  #footer .social-link svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 
 /* Small Desktop */
@@ -259,6 +308,12 @@
 
   #footer .credit .copyright {
     display: inline-block;
+  }
+
+  /* Social Media Section Desktop */
+  #footer .social-media-section {
+    margin-top: 3.125rem;
+    margin-bottom: 2rem;
   }
 }
 
